@@ -8,11 +8,11 @@ The bag will also require a way to add and remove marbles from the bag, by way o
 A basic example of such a design could be the following:
 
 > ##### **Marble Object**
-
-**Variables**:
-- uint32 marbles_max
-- uint32 marbles_count
-
-**Methods**
-- addMarble(uint32 count, *type* style) // leave **style** blank for random
-- removeMarble(uint32 count, *type* style) // leave **style** blank for random
+>
+> **Variables**:
+> - uint32 marbles_max
+> - uint32 marbles_count
+>
+> **Methods**
+> - addMarble(uint32 count, *type* style) // leave **style** blank for random
+> - removeMarble(uint32 count, *type* style) // leave **style** blank for random
