@@ -1,6 +1,9 @@
 #include "marblebag.h"
 
-MarbleBag::MarbleBag(std::vector<char*> colors, std::vector<char*> designs, uint32_t marbles_max) : colors(colors), designs(designs), marbles_max(marbles_max) {};
+MarbleBag::MarbleBag(std::vector<char*> colors, std::vector<char*> designs, uint32_t marbles_max) : colors(colors), designs(designs), marbles_max(marbles_max)
+{
+    marbles_count = 0;
+};
 
 void MarbleBag::printMarbles()
 {
@@ -32,7 +35,7 @@ void MarbleBag::addMarble(uint32_t count, uint16_t style)
         }
         else
         {
-            std::printf("Unable to add marbles with count of [%u] with only [%u] space left in bag\n", count, (marbles_max - marbles_count));
+            std::printf("Unable to add marble with count of [%u] with only [%u] space left in bag\n", count, (marbles_max - marbles_count));
             return;
         }
     }
@@ -40,7 +43,7 @@ void MarbleBag::addMarble(uint32_t count, uint16_t style)
     {
         if ((marbles[style] + count) + marbles_count > marbles_max) // only add marbles if enough space is left
         {
-            std::printf("Unable to add marbles with count of [%u] with only [%u] space left in bag\n", count, (marbles_max - marbles_count));
+            std::printf("Unable to add marble with count of [%u] with only [%u] space left in bag\n", count, (marbles_max - marbles_count));
             return;
         }
         else
@@ -49,13 +52,14 @@ void MarbleBag::addMarble(uint32_t count, uint16_t style)
             marbles_count = marbles_count + count;
         }
     }
+    std::printf("Added [%u %s %s] marble(s) to the bag\n", count, colors[(style & 0xFF00) >> 8], designs[style & 0x00FF]);
 };
 
 void MarbleBag::removeMarble(uint32_t count, uint16_t style) // marble does not exist in bag
 {
     if (marbles.find(style) == marbles.end())
     {
-        std::printf("Cannot remove '%s %s' marbles as they do not exist in the bag\n", colors[(style & 0xFF00) >> 8], designs[style & 0x00FF]);
+        std::printf("Cannot remove [%s %s] marbles as they do not exist in the bag\n", colors[(style & 0xFF00) >> 8], designs[style & 0x00FF]);
         return;
     }
     else
@@ -68,6 +72,7 @@ void MarbleBag::removeMarble(uint32_t count, uint16_t style) // marble does not 
         {
             marbles[style] = 0;
         }
+        std::printf("Removed [%u %s %s] marble(s) from the bag\n", count, colors[(style & 0xFF00) >> 8], designs[style & 0x00FF]);
         marbles_count = marbles_count - count;
     }
 };
