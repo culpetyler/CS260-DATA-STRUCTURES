@@ -7,7 +7,7 @@ The bag will also require a way to add and remove marbles from the bag, by way o
 
 A basic example of such a design could be the following:
 
-> ##### **Marble Object**
+> ### **Marble Object**
 >
 > **Variables**:
 > - uint32 marbles_max
