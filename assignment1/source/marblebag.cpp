@@ -1,6 +1,6 @@
 #include "marblebag.h"
 
-MarbleBag::MarbleBag(std::vector<char*> colors, std::vector<char*> designs, uint32_t marbles_max) : colors(colors), designs(designs), marbles_max(marbles_max)
+MarbleBag::MarbleBag(std::vector<const char*> colors, std::vector<const char*> designs, uint32_t marbles_max) : colors(colors), designs(designs), marbles_max(marbles_max)
 {
     marbles_count = 0;
 };

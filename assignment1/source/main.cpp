@@ -4,8 +4,8 @@
 
 int main()
 {
-    std::vector<char*> colors = { "red", "orange", "yellow", "green", "blue", "purple", "pink", "white", "black", "grey", "gold", "silver", "copper" };
-    std::vector<char*> designs = { "solid", "striped", "dotted", "wavey", "splatter", "helix", "shattered", "picture" };
+    std::vector<const char*> colors = { "red", "orange", "yellow", "green", "blue", "purple", "pink", "white", "black", "grey", "gold", "silver", "copper" };
+    std::vector<const char*> designs = { "solid", "striped", "dotted", "wavey", "splatter", "helix", "shattered", "picture" };
     MarbleBag mb(colors, designs, 764);
     
     mb.addMarble(1000, 0x0303); // should fail because [1000] marbles is more than the available [764] we set above

@@ -12,12 +12,12 @@ private:
     uint32_t marbles_max;
     uint32_t marbles_count;
 
-    std::vector<char*> colors;
-    std::vector<char*> designs;
+    std::vector<const char*> colors;
+    std::vector<const char*> designs;
     std::map<uint16_t, uint32_t> marbles;
 
 public:
-    MarbleBag(std::vector<char*> colors, std::vector<char*> designs, uint32_t marbles_max);
+    MarbleBag(std::vector<const char*> colors, std::vector<const char*> designs, uint32_t marbles_max);
     ~MarbleBag();
 
     void addMarble(uint32_t count, uint16_t style);
