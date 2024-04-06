@@ -12,6 +12,7 @@ A basic example of such a design could be the following:
 **Variables**:
 - uint32 marbles_max
 - uint32 marbles_count
+- vector marbles
 
 **Methods**
 - addMarble(uint32 count, *type* style) // leave **style** blank for random
